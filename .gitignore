@@ -14,4 +14,4 @@
 .singularity/*
 .slurm/*
 .ssh/*
-.vscode-server/*
+.vscode-server/
