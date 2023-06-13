@@ -1,0 +1,17 @@
+.apptainer/*
+.cache/*
+.conda/*
+.config/*
+.cookiecutter_replay/*
+.cookiecutters/*
+.dbus/*
+.esmtp_queue/*
+.local/*
+.mozilla/*
+.nv/*
+.pki/*
+.rstudio/*
+.singularity/*
+.slurm/*
+.ssh/*
+.vscode-server/*
