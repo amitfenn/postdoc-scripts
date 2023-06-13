@@ -14,5 +14,12 @@
 .singularity/*
 .slurm/*
 .ssh/*
-miniconda3/*
 .vscode-server/*
+miniconda3/*
+.bash*
+.vim*
+.Xauthority
+.emacs
+.esd_auth
+.zcompdump
+
