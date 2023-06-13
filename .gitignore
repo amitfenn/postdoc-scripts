@@ -14,5 +14,5 @@
 .singularity/*
 .slurm/*
 .ssh/*
-miniconda/*
+miniconda3/*
 .vscode-server/*
