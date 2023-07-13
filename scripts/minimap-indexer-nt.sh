@@ -7,7 +7,7 @@
 #SBATCH --job-name=indexing-minimap.nt
 
 #choose array numbers from various K sizes and step up by 3
-#SBATCH --array=23,8-14:3%4
+#SBATCH --array=22,24,26
 
 #make sure you have the folder ~/logs/slurm/ for the next lines.
 #SBATCH -o /home/haicu/amit.fenn/logs/slurm/%x.%j.%a.out 
