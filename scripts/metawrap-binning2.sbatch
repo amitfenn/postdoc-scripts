@@ -20,14 +20,14 @@
 
 source /home/haicu/amit.fenn/miniconda3/bin/activate metawrap-env
 PATH=$PATH:/lustre/groups/hpc/urban_lab/tools/metaWRAP/bin
-mkdir -p /lustre/groups/hpc/urban_lab/projects/amit/metagang/amit_metawrap/binning/${SLURM_ARRAY_TASK_ID}
+mkdir -p /lustre/groups/hpc/urban_lab/projects/amit/metagang/amit_metawrap/BIN_REFINEMENT/${SLURM_ARRAY_TASK_ID}
 
 metawrap bin_refinement \
--o /lustre/groups/hpc/urban_lab/projects/amit/metagang/amit_metawrap/BIN_REFINEMENT \
+-o /lustre/groups/hpc/urban_lab/projects/amit/metagang/amit_metawrap/BIN_REFINEMENT/${SLURM_ARRAY_TASK_ID} \
 -t 96 \
 -A /lustre/groups/hpc/urban_lab/projects/amit/metagang/amit_metawrap/binning/${SLURM_ARRAY_TASK_ID}/metabat2_bins/ \
 -B /lustre/groups/hpc/urban_lab/projects/amit/metagang/amit_metawrap/binning/${SLURM_ARRAY_TASK_ID}/maxbin2_bins/ \
 -C /lustre/groups/hpc/urban_lab/projects/amit/metagang/amit_metawrap/binning/${SLURM_ARRAY_TASK_ID}/concoct_bins/ \
--c 50 \
--x 10
+-c 30 \
+-x 5
 
