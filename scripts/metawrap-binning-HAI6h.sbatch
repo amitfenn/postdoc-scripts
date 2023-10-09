@@ -4,7 +4,7 @@
 #SBATCH --cpus-per-task=20
 #SBATCH --mem-per-cpu=10G
 #SBATCH --signal=USR2
-#SBATCH --job-name=metaWRAP_binning
+#SBATCH --job-name=metaWRAP_binning_HAI6h
 #SBATCH --array=1-6%1
 
 #make sure you have the folder ~/logs/slurm/ for the next lines.
@@ -17,13 +17,22 @@
 #SBATCH --partition=cpu_p
 #SBATCH --qos=cpu_normal
 
-
+# Activate Conda environment.
 source /home/haicu/amit.fenn/miniconda3/bin/activate metawrap-env
+
+#Update PATH variable to be able to call metaWrAP
 PATH=$PATH:/lustre/groups/hpc/urban_lab/tools/metaWRAP/bin
+
+# Making sure the output directories exist
 mkdir /lustre/groups/hpc/urban_lab/projects/amit/metagang/amit_metawrap/binning/HAI_6h/${SLURM_ARRAY_TASK_ID}
+
+#Selecting an reference fasta from collection of contigs.
 fasta=$(cat /home/haicu/amit.fenn/scripts/HAI_6h_racon_polished_fasta.paths | head -n ${SLURM_ARRAY_TASK_ID} | tail -n 1 )
+
+#Sanity Check
 echo ${SLURM_ARRAY_TASK_ID} $fasta
 
+#Payload
 metawrap binning \
 -o /lustre/groups/hpc/urban_lab/projects/amit/metagang/amit_metawrap/binning/HAI_6h/$SLURM_ARRAY_TASK_ID \
 -t 20 \
