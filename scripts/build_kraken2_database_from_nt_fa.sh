@@ -2,7 +2,6 @@
 #unless you are running a parallelized task and know what you're doing, ntasks remain 1, modify the next lines to your task.
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=1
-#SBATCH --mem-per-cpu=40G
 #SBATCH --signal=USR2
 #SBATCH --job-name=build_kraken_database
 
@@ -14,6 +13,6 @@
 
 #This is where you allocate some of cluster specific parameters.
 #SBATCH --partition=cpu_p
-#SBATCH --qos=cpu
+#SBATCH --qos=cpu_long
 
 /lustre/groups/hpc/urban_lab/projects/amit/kraken2/kraken2/bin/kraken2-build --add-to-library /lustre/groups/hpc/urban_lab/datasets/ncbi/nt.fa --db /lustre/groups/hpc/urban_lab/projects/KrakenDatabase/nt

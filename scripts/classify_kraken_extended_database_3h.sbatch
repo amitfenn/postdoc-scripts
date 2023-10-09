@@ -18,11 +18,12 @@
 #SBATCH --qos=cpu_normal
 
 reads=$(cat ~/scripts/HAI_HAC.paths | grep 3h | head -n $SLURM_ARRAY_TASK_ID |tail -n1)
-database=/lustre/groups/hpc/urban_lab/datasets/ncbi/kraken_db_extended
+export database="/lustre/groups/hpc/urban_lab/datasets/ncbi/kraken_db_finalized:"
 outputfile=/lustre/groups/hpc/urban_lab/projects/amit/squiggle4biodiversity/inference/Coriolis_HAI/3h/$(basename $reads .fastq)
 mkdir -p $( dirname $outputfile)
 
 /lustre/groups/hpc/urban_lab/projects/amit/kraken2/kraken2/bin/kraken2 \
+	--memory-mapping \
 	--db $database \
 	$reads \
 	--use-names \

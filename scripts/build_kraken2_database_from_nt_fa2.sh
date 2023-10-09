@@ -1,8 +1,7 @@
 #!/bin/bash
 #unless you are running a parallelized task and know what you're doing, ntasks remain 1, modify the next lines to your task.
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=12
-#SBATCH --mem-per-cpu=40G
+#SBATCH --cpus-per-task=2
 #SBATCH --signal=USR2
 #SBATCH --job-name=2build_kraken_database
 
@@ -14,6 +13,6 @@
 
 #This is where you allocate some of cluster specific parameters.
 #SBATCH --partition=cpu_p
-#SBATCH --qos=cpu
+#SBATCH --qos=cpu_long
 
-/lustre/groups/hpc/urban_lab/projects/amit/kraken2/kraken2/bin/kraken2-build --build --threads 12  --db /lustre/groups/hpc/urban_lab/projects/KrakenDatabase/nt
+/lustre/groups/hpc/urban_lab/projects/amit/kraken2/kraken2/bin/kraken2-build --build --db /lustre/groups/hpc/urban_lab/projects/KrakenDatabase/nt && echo Kraken did well.

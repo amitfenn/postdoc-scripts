@@ -18,7 +18,7 @@
 #SBATCH --qos=cpu
 
 reads=$(cat ~/scripts/Greenhouse_HAC.paths | grep 1h | head -n $SLURM_ARRAY_TASK_ID |tail -n1)
-database=/lustre/groups/hpc/urban_lab/projects/KrakenDatabase/nt/kraken_db
+export database="/lustre/groups/hpc/urban_lab/projects/KrakenDatabase/nt/kraken_db:"
 outputfile=/lustre/groups/hpc/urban_lab/projects/amit/metagang/Greenhouse/1h/$(basename $reads .fastq)
 
 /lustre/groups/hpc/urban_lab/projects/amit/kraken2/kraken2/bin/kraken2 \

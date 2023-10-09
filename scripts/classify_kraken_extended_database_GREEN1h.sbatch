@@ -1,8 +1,7 @@
 #!/bin/bash
 #unless you are running a parallelized task and know what you're doing, ntasks remain 1, modify the next lines to your task.
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=2
-#SBATCH --mem-per-cpu=120G
+#SBATCH --cpus-per-task=1
 #SBATCH --signal=USR2
 #SBATCH --job-name=1h_kraken-classification_greenhouse
 #SBATCH --array=1-193%4
@@ -15,17 +14,19 @@
 
 #This is where you allocate some of cluster specific parameters.
 #SBATCH --partition=cpu_p
-#SBATCH --qos=cpu
+#SBATCH --qos=cpu_normal
 
 reads=$(cat ~/scripts/Greenhouse_HAC.paths | grep 1h | head -n $SLURM_ARRAY_TASK_ID |tail -n1)
-database=/lustre/groups/hpc/urban_lab/datasets/ncbi/kraken_db_extended
-outputfile=/lustre/groups/hpc/urban_lab/projects/amit/metagang/Greenhouse/1h/$(basename $reads .fastq)
+export database="/lustre/groups/hpc/urban_lab/datasets/ncbi/kraken_db_finalized:"
+outputfile=/lustre/groups/hpc/urban_lab/projects/amit/squiggle4biodiversity/inference/Greenhouse/1h/$(basename $reads .fastq)
+mkdir -p $( dirname $outputfile)
 
 /lustre/groups/hpc/urban_lab/projects/amit/kraken2/kraken2/bin/kraken2 \
+	--memory-mapping \
 	--db $database \
 	$reads \
 	--use-names \
-	--threads 2 \
+	--threads 1 \
 	--output $outputfile.out \
 	--report $outputfile.report \
 	--report-minimizer-data

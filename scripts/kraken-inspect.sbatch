@@ -2,7 +2,6 @@
 #unless you are running a parallelized task and know what you're doing, ntasks remain 1, modify the next lines to your task.
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=1
-#SBATCH --mem-per-cpu=100G
 #SBATCH --signal=USR2
 #SBATCH --job-name=kraken-inspect
 
@@ -14,7 +13,7 @@
 
 #This is where you allocate some of cluster specific parameters.
 #SBATCH --partition=cpu_p
-#SBATCH --qos=cpu_normal
+#SBATCH --qos=cpu_long
 
-~/bin/kraken2-inspect --db /lustre/groups/hpc/urban_lab/datasets/ncbi/kraken_db_extended/
+~/bin/kraken2-inspect --db /lustre/groups/hpc/urban_lab/datasets/ncbi/kraken_db_finalized --threads 12 > ~/scripts/kraken-inspect_kraken_db_extended1.out
 exit
