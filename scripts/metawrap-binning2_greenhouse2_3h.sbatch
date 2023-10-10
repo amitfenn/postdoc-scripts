@@ -4,8 +4,8 @@
 #SBATCH --cpus-per-task=20
 #SBATCH --mem-per-cpu=10G
 #SBATCH --signal=USR2
-#SBATCH --job-name=metaWRAP_binning
-#SBATCH --array=1-3%1
+#SBATCH --job-name=metaWRAP_binning2_green23
+#SBATCH --array=1-12%1
 
 #make sure you have the folder ~/logs/slurm/ for the next lines.
 #SBATCH -o /home/haicu/amit.fenn/logs/slurm/%x.%j.%a.out  
@@ -17,17 +17,23 @@
 #SBATCH --partition=cpu_p
 #SBATCH --qos=cpu_normal
 
-
+# Activate Conda environment.
 source /home/haicu/amit.fenn/miniconda3/bin/activate metawrap-env
-PATH=$PATH:/lustre/groups/hpc/urban_lab/tools/metaWRAP/bin
-mkdir -p /lustre/groups/hpc/urban_lab/projects/amit/metagang/amit_metawrap/BIN_REFINEMENT/${SLURM_ARRAY_TASK_ID}
 
+#Update PATH variable to be able to call metaWrAP
+PATH=$PATH:/lustre/groups/hpc/urban_lab/tools/metaWRAP/bin
+
+# Making sure the output directories exist
+outputdir=/lustre/groups/hpc/urban_lab/projects/amit/metagang/amit_metawrap/BIN_REFINEMENT/greenhouse23h/${SLURM_ARRAY_TASK_ID}
+mkdir -p $outputdir
+
+# Payload
 metawrap bin_refinement \
--o /lustre/groups/hpc/urban_lab/projects/amit/metagang/amit_metawrap/BIN_REFINEMENT/${SLURM_ARRAY_TASK_ID} \
+-o $outputdir \
 -t 96 \
--A /lustre/groups/hpc/urban_lab/projects/amit/metagang/amit_metawrap/binning/${SLURM_ARRAY_TASK_ID}/metabat2_bins/ \
--B /lustre/groups/hpc/urban_lab/projects/amit/metagang/amit_metawrap/binning/${SLURM_ARRAY_TASK_ID}/maxbin2_bins/ \
--C /lustre/groups/hpc/urban_lab/projects/amit/metagang/amit_metawrap/binning/${SLURM_ARRAY_TASK_ID}/concoct_bins/ \
+-A /lustre/groups/hpc/urban_lab/projects/amit/metagang/amit_metawrap/binning/greenhouse23h/${SLURM_ARRAY_TASK_ID}/metabat2_bins/ \
+-B /lustre/groups/hpc/urban_lab/projects/amit/metagang/amit_metawrap/binning/greenhouse23h/${SLURM_ARRAY_TASK_ID}/maxbin2_bins/ \
+-C /lustre/groups/hpc/urban_lab/projects/amit/metagang/amit_metawrap/binning/greenhouse23h/${SLURM_ARRAY_TASK_ID}/concoct_bins/ \
 -c 30 \
 -x 5
 
