@@ -24,7 +24,7 @@ source /home/haicu/amit.fenn/miniconda3/bin/activate metawrap-env
 PATH=$PATH:/lustre/groups/hpc/urban_lab/tools/metaWRAP/bin
 
 # Making sure the output directories exist
-outputdir=/lustre/groups/hpc/urban_lab/projects/amit/metagang/amit_metawrap/binning/greenhouse23h${SLURM_ARRAY_TASK_ID}
+outputdir=/lustre/groups/hpc/urban_lab/projects/amit/metagang/amit_metawrap/binning/greenhouse23h/${SLURM_ARRAY_TASK_ID}
 mkdir $outputdir -p
 
 #Selecting an reference fasta from collection of contigs.
@@ -37,6 +37,6 @@ echo ${SLURM_ARRAY_TASK_ID} $fasta
 metawrap binning \
 -o $outputdir \
 -t 20 \
--a $fasta \ 
+-a $fasta \
 --metabat2 --maxbin2 --concoct --single-end \
 $(ls /lustre/groups/hpc/urban_lab/projects/amit/Greenhouse/hac23h/processing/nanofilt/filtered_barcode*_passed.fastq)

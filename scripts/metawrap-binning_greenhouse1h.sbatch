@@ -37,6 +37,6 @@ echo ${SLURM_ARRAY_TASK_ID} $fasta
 metawrap binning \
 -o $outputdir \
 -t 20 \
--a $fasta \ 
+-a $fasta \
 --metabat2 --maxbin2 --concoct --single-end \
 $(ls /lustre/groups/hpc/urban_lab/projects/amit/Greenhouse/hac1h/processing/nanofilt/filtered_barcode*_passed.fastq)
