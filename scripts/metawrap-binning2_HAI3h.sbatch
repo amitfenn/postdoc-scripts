@@ -24,7 +24,7 @@ source /home/haicu/amit.fenn/miniconda3/bin/activate metawrap-env
 PATH=$PATH:/lustre/groups/hpc/urban_lab/tools/metaWRAP/bin
 
 # Making sure the output directories exist
-outputdir=/lustre/groups/hpc/urban_lab/projects/amit/metagang/amit_metawrap/BIN_REFINEMENT/HAI_3h/${SLURM_ARRAY_TASK_ID}
+outputdir=/lustre/groups/hpc/urban_lab/projects/amit/metagang/amit_metawrap/BIN_REFINEMENT2/HAI_3h/${SLURM_ARRAY_TASK_ID}
 mkdir -p $outputdir
 
 # Payload
@@ -35,5 +35,4 @@ metawrap bin_refinement \
 -B /lustre/groups/hpc/urban_lab/projects/amit/metagang/amit_metawrap/binning/HAI_3h/${SLURM_ARRAY_TASK_ID}/maxbin2_bins/ \
 -C /lustre/groups/hpc/urban_lab/projects/amit/metagang/amit_metawrap/binning/HAI_3h/${SLURM_ARRAY_TASK_ID}/concoct_bins/ \
 -c 30 \
--x 5
-
+-x 30
