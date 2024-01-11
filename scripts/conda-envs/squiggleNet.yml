@@ -1,0 +1,23 @@
+name: squiggleNet
+channels:
+  - ursky
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - ca-certificates
+  - certifi
+  - click
+  - cudatoolkit
+  - h5py
+  - ipykernel
+  - openssl
+  - pandas
+  - pip
+  - pytorch
+  - pytorch-cuda=11.7
+  - scikit-learn
+  - seaborn
+  - torchaudio
+  - torchvision
+prefix: /home/haicu/amit.fenn/miniconda3/envs/squiggleNet

@@ -1,0 +1,15 @@
+name: taxkit
+channels:
+  - ursky
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - taxonkit
+  - csvtk
+  - taxpasta
+  - ete3
+  - ca-certificates
+  - certifi
+  - openssl
+prefix: /home/haicu/amit.fenn/miniconda3/envs/taxkit

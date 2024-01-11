@@ -1,0 +1,9 @@
+name: pysamer
+channels:
+  - ursky
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - matplotlib
+prefix: /home/haicu/amit.fenn/miniconda3/envs/pysamer

@@ -1,0 +1,9 @@
+name: metabat
+channels:
+  - ursky
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - metabat2
+prefix: /home/haicu/amit.fenn/miniconda3/envs/metabat

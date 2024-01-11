@@ -1,0 +1,17 @@
+name: ete3
+channels:
+  - ursky
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - ete3
+  - pandas
+  - ca-certificates
+  - certifi
+  - openssl
+  - seaborn
+  - matplotlib
+  - tqdm
+  - ipykernel
+prefix: /home/haicu/amit.fenn/miniconda3/envs/ete3

@@ -1,0 +1,12 @@
+name: test
+channels:
+  - ursky
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - python
+  - matplotlib
+  - ca-certificates
+  - openssl
+prefix: /home/haicu/amit.fenn/miniconda3/envs/test

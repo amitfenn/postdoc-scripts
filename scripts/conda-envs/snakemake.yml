@@ -1,0 +1,9 @@
+name: snakemake
+channels:
+  - ursky
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - snakemake
+prefix: /home/haicu/amit.fenn/miniconda3/envs/snakemake

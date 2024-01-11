@@ -1,0 +1,9 @@
+name: dastool
+channels:
+  - ursky
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - das_tool
+prefix: /home/haicu/amit.fenn/miniconda3/envs/dastool

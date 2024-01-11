@@ -1,0 +1,9 @@
+name: vamb
+channels:
+  - ursky
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.6
+prefix: /home/haicu/amit.fenn/miniconda3/envs/vamb

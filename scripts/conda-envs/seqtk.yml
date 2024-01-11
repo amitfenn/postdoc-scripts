@@ -1,0 +1,9 @@
+name: seqtk
+channels:
+  - ursky
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - seqtk
+prefix: /home/haicu/amit.fenn/miniconda3/envs/seqtk

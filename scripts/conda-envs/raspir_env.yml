@@ -1,0 +1,15 @@
+name: raspir_env
+channels:
+  - ursky
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - trimmomatic
+  - samtools
+  - bwa
+  - statsmodels
+  - matplotlib
+  - ca-certificates
+  - openssl
+prefix: /home/haicu/amit.fenn/miniconda3/envs/raspir_env

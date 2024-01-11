@@ -1,0 +1,9 @@
+name: bowtie
+channels:
+  - ursky
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - bowtie2
+prefix: /home/haicu/amit.fenn/miniconda3/envs/bowtie

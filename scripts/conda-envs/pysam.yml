@@ -1,0 +1,9 @@
+name: pysam
+channels:
+  - ursky
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - pysam
+prefix: /home/haicu/amit.fenn/miniconda3/envs/pysam

@@ -1,0 +1,7 @@
+name: krakenuniq
+channels:
+  - ursky
+  - bioconda
+  - conda-forge
+  - defaults
+prefix: /home/haicu/amit.fenn/miniconda3/envs/krakenuniq
