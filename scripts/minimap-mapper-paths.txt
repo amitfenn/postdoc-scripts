@@ -1,6 +1,0 @@
-/lustre/groups/hpc/urban_lab/projects/amit/metagang/greenhouseassemblies/2_and_3hours_coriolis/barcode24_porechop_nanofilt.fastq
-/lustre/groups/hpc/urban_lab/projects/amit/metagang/greenhouseassemblies/2_and_3hours_coriolis/barcode23_porechop_nanofilt.fastq
-/lustre/groups/hpc/urban_lab/projects/amit/metagang/greenhouseassemblies/2_and_3hours_coriolis/barcode20_porechop_nanofilt.fastq
-/lustre/groups/hpc/urban_lab/projects/amit/metagang/greenhouseassemblies/2_and_3hours_coriolis/barcode22_porechop_nanofilt.fastq
-/lustre/groups/hpc/urban_lab/projects/amit/metagang/greenhouseassemblies/2_and_3hours_coriolis/barcode01_porechop_nanofilt.fastq
-/lustre/groups/hpc/urban_lab/projects/amit/metagang/greenhouseassemblies/2_and_3hours_coriolis/barcode21_porechop_nanofilt.fastq
