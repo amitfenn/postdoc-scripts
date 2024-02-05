@@ -39,6 +39,5 @@ metawrap binning \
 -o $outputdir \
 -t 20 \
 -a $fasta \
---run-checkm \
 --metabat2 --maxbin2 --concoct --single-end \
 $(echo $fasta | sed 's/racon/nanofilt/g' | sed 's/polished/combined/g'|sed 's/.fasta/_passed.fastq/g')
